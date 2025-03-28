@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MoviesModule } from './movies/movies.module';
+import { ShowtimesModule } from './showtimes/showtimes.module';
 
 @Module({
   imports: [ TypeOrmModule.forRoot({
@@ -14,7 +15,7 @@ import { MoviesModule } from './movies/movies.module';
     database: 'popcorn-palace', 
     synchronize: true, 
     autoLoadEntities: true, 
-  }),MoviesModule],
+  }),MoviesModule, ShowtimesModule],
   controllers: [AppController],
   providers: [AppService],
 })
