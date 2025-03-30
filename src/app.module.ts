@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MoviesModule } from './movies/movies.module';
 import { ShowtimesModule } from './showtimes/showtimes.module';
@@ -17,7 +15,7 @@ import { BookingsModule } from './bookings/bookings.module';
     synchronize: true, 
     autoLoadEntities: true, 
   }),MoviesModule, ShowtimesModule, BookingsModule],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
