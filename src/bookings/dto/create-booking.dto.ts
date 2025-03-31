@@ -1,13 +1,17 @@
-import { IsUUID, IsInt, Min } from 'class-validator';
+import { IsUUID, IsInt, Min, IsNotEmpty, IsDefined } from 'class-validator';
 
 export class CreateBookingDto {
   @IsUUID()
+  @IsNotEmpty()
+  @IsDefined()
   userId: string;
 
   @IsInt()
+  @IsDefined()
   showtimeId: number;
-
-  @IsInt()
+ 
   @Min(1)
+  @IsInt()
+  @IsDefined()
   seatNumber: number;
 }

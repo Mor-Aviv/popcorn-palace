@@ -4,26 +4,36 @@ import {
     IsString,
     IsDateString,
     IsNumber,
+    IsNotEmpty,
+    IsDefined
   } from 'class-validator';
   
   export class CreateShowtimeDto {
-    @IsInt()
+    
     @IsPositive()
+    @IsInt()
+    @IsDefined()
     movieId: number;
 
-    @IsNumber()
     @IsPositive()
+    @IsNumber()
+    @IsDefined()
     price: number;
   
     @IsString()
+    @IsNotEmpty()
+    @IsDefined()
     theater: string;
   
     @IsDateString()
+    @IsNotEmpty()
+    @IsDefined()
     startTime: string;
   
     @IsDateString()
+    @IsNotEmpty()
+    @IsDefined()
     endTime: string;
   
-    
   }
   
